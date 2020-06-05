@@ -63,16 +63,28 @@
 
     });
 
+    let timeoutId;
+
     function playSlideshow() {
         
-        setTimeout(()=>{
+        timeoutId = setTimeout(()=>{
             next.click();
         playSlideshow();
         },1000);
     }
 
+    let isPlaying = false;
+
     const play = document.getElementById('play');
     play.addEventListener('click',()=>{
-        playSlideshow();
+        if(isPlaying === false){
+            playSlideshow();
+            play.textContent = 'pause';
+        } else {
+            clearTimeout(timeoutId);
+            play.textContent = 'Play';
+        }
+        isPlaying =! isPlaying;
+        
     });
 }

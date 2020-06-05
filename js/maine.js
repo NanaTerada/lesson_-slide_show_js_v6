@@ -17,10 +17,19 @@
     // ↑表示する領域
     mainImage.src = images[currentIndex];
 
-    images.forEach (image =>{
+    images.forEach ((image,index )=>{
         const img = document.createElement('img');
         img.src = image;
         const li = document.createElement('li');
+
+        if(index === currentIndex) {   
+            li.classList.add('current') //表示中の画像と、一緒のものはcurrentクラスをつける
+        }
+
+        li.addEventListener('click',()=>{
+            mainImage.src = image;
+        });
+
         li.appendChild(img);
 
         document.querySelector('.thumbnails').appendChild(li);

@@ -1,5 +1,5 @@
 main {
-    width:300;
+    width:300px;
     margin: 0 auto;
 }
 
@@ -49,6 +49,26 @@ nav li:hover {
 #prev ,
 #next {
     width: 60px;
+}
+
+.thumbnails {
+    display: grid;
+    grid-template-columns: repeat(5,56px);
+    gap:5px;
+
+}
+
+.thumbnails li {
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.thumbnails li.current {
+    opacity: 1;
+}
+
+.thumbnails li:hover {
+    opacity: 1;
 }
 
 .thumbnails img {

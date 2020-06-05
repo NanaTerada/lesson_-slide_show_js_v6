@@ -16,4 +16,14 @@
     const mainImage = document.getElementById('main');
     // ↑表示する領域
     mainImage.src = images[currentIndex];
+
+    images.forEach (image =>{
+        const img = document.createElement('img');
+        img.src = image;
+        const li = document.createElement('li');
+        li.appendChild(img);
+
+        document.querySelector('.thumbnails').appendChild(li);
+
+    });
 }
